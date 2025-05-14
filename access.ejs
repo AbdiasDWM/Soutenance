@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accès au produit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #2d3748;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #4a5568;
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 1.1em;
+            padding: 12px 30px;
+            margin-top: 20px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .btn:active {
+            background-color: #388e3c;
+        }
+
+        .btn-secondary {
+            background-color: #007BFF;
+        }
+
+        .btn-secondary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Félicitations, <%= username %> !</h1>
+        <p>Votre paiement a été validé avec succès.</p>
+        <p>Vous pouvez maintenant télécharger votre produit : <strong>Recettes de cuisine PDF</strong></p>
+
+        <!-- Lien pour télécharger le fichier -->
+        <a href="/product1.pdf" class="btn" download>
+            Télécharger le PDF
+        </a>
+         <a href="/product2.pdf" class="btn" download>
+            Télécharger le PDF
+        </a>
+         <a href="/product3.pdf" class="btn" download>
+            Télécharger le PDF
+        </a>
+         <a href="/product4.pdf" class="btn" download>
+            Télécharger le PDF
+        </a>
+         <a href="/product5.pdf" class="btn" download>
+            Télécharger le PDF
+        </a>
+
+        <!-- Bouton pour retourner à l'accueil -->
+        <br>
+        <a href="/home" class="btn btn-secondary">
+            Retour à l'accueil
+        </a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,514 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/global.css">
+  
+  <!-- Favicon (corrigé) -->
+  <link rel="icon" type="image/png" href="chef-icon.png">
+  <!-- Optionnel : favicon de secours -->
+  <link rel="shortcut icon" href="chef-icon.png" type="image/png">
+</head>
+
+<body>
+    <div class="holder">
+        <!-- Header avec boutons de connexion et d'inscription -->
+        <header id="header" class="header">
+            <nav class="navbar flex">
+                <div class="container flex flex-sb">
+                    <a href="index.html" class="navbar-brand">Mr<span>. Abdias</span></a>
+                    <button type="button" class="navbar-toggler flex flex-sb" ">
+                        <div class="line line-1"></div>
+                        <div class="line line-2"></div>
+                        <div class="line line-3"></div>
+                    </button>
+    
+                    <div class="navbar-collapse">
+                        <ul class="navbar-nav">
+                            <li class="nav-item"><a href="#header" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                            <li class="nav-item"><a href="#catering" class="nav-link">Catering</a></li>
+                            <li class="nav-item"><a href="#menu" class="nav-link">Menu</a></li>
+                            <li class="nav-item"><a href="#teams" class="nav-link">Teams</a></li>
+                            <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                             <div class="auth-buttons">
+                    <a href="javascript:void(0);" class="login-btn" id="loginBtn">Se connecter</a>
+                    <a href="javascript:void(0);" class="signup-btn" id="signupBtn">S'inscrire</a>
+                </div>
+                        </ul>
+                    </div>
+                    <!-- Boutons Login et Signup -->
+               
+                </div>
+    
+                
+            </nav>
+        </header>
+    
+        <!-- Formulaire de connexion -->
+        <div id="loginForm" class="form-container" style="display: none;">
+            <h2>Login</h2>
+            <form action="/login" method="post">
+                <div class="form-group">
+                    <label for="login-name">Name</label>
+                    <input type="text" id="login-name" name="name" placeholder="Enter your name" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" name="password" id="login-password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="submit-btn">Login</button>
+                <button type="button" class="close-btn" id="closeLoginBtn">Close</button>
+            </form>
+            <p>Don't have an account? <a href="javascript:void(0);" id="showSignup">Sign up</a></p>
+        </div>
+    
+   <!-- Formulaire d'inscription -->
+<div id="signupForm" class="form-container" style="display: none;">
+    <h2>Sign Up</h2>
+    <form action="/signup" method="post">
+        <div class="form-group">
+            <label for="signup-name">Name</label>
+            <input type="text" id="signup-name" name="name" placeholder="Enter your name" required autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" name="email" placeholder="Enter your email" required autocomplete="off">
+        </div>
+        <div class="form-group">
+            <label for="signup-password">Password</label>
+            <input type="password" name="password" id="signup-password" placeholder="Password" required>
+        </div>
+        <button type="submit" class="submit-btn">Sign Up</button>
+        <button type="button" class="close-btn" id="closeSignupBtn">Close</button>
+    </form>
+    <p style="margin-top: 10px; font-weight: bold;">Already have an account? <a href="javascript:void(0);" id="showLogin" style="color: #3498db; text-decoration: underline; font-size: 16px;">Login</a></p>
+</div>
+
+    
+        <script>
+            // Boutons d'affichage
+            const loginBtn = document.getElementById('loginBtn');
+            const signupBtn = document.getElementById('signupBtn');
+    
+            
+    
+            // Liens internes
+            const showSignup = document.getElementById('showSignup');
+            const showLogin = document.getElementById('showLogin');
+    
+            // Boutons de fermeture
+            const closeLoginBtn = document.getElementById('closeLoginBtn');
+            const closeSignupBtn = document.getElementById('closeSignupBtn');
+    
+            // Ouvrir login
+            loginBtn.addEventListener('click', function () {
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+            });
+    
+            // Ouvrir signup
+            signupBtn.addEventListener('click', function () {
+                signupForm.style.display = 'block';
+                loginForm.style.display = 'none';
+            });
+    
+            // Passer de login à signup
+            showSignup.addEventListener('click', function () {
+                signupForm.style.display = 'block';
+                loginForm.style.display = 'none';
+            });
+    
+            // Passer de signup à login
+            showLogin.addEventListener('click', function () {
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+            });
+    
+            // Fermer les formulaires
+            closeLoginBtn.addEventListener('click', function () {
+                loginForm.style.display = 'none';
+            });
+    
+            closeSignupBtn.addEventListener('click', function () {
+                signupForm.style.display = 'none';
+            });
+        </script>
+    </div>
+    
+
+<!-- services section -->
+<section id="services" class="services py-5">
+    <div class="slanted-bg flex">
+        <div class="slanted-bg-circle"></div>
+        <div class="container flex">
+            <h2>Meilleur Site De Guide De La Cuisine</h2>
+        </div>
+
+        <svg height="50" width="250" class="svg">
+            <circle cx="125" cy="125" r="65%" fill="white"></circle>
+        </svg>
+    </div>
+
+    <div class="section-title flex">
+        <div class="icon">
+            <img src="chef-icon.png" alt="" class="img1">
+        </div>
+        <h2>Services</h2>
+    </div>
+    <div class="container">
+        <div class="services-grid grid">
+            <article class="service-item">
+                <div class="flex flex-sb service-item-head">
+                    <span class="num">01</span>
+                    <h3>Haute qualité</h3>
+                </div>
+                <p class="text">Bienvenue sur CuisinePrestige, votre boutique en ligne dédiée aux amoureux de la gastronomie !</p>
+                <a href="javascript:void(0);" class="button voir-plus-btn">Voir plus</a>
+            </article>
+
+            <article class="service-item">
+                <div class="flex flex-sb service-item-head">
+                    <span class="num">02</span>
+                    <h3>Meilleures recettes</h3>
+                </div>
+                <p class="text">Découvrez les Meilleures Recettes de Cuisine Haut de Gamme</p>
+                <a href="javascript:void(0);" class="button voir-plus-btn">Voir plus</a>
+            </article>
+
+            <article class="service-item">
+                <div class="flex flex-sb service-item-head">
+                    <span class="num">03</span>
+                    <h3>Vrai goût</h3>
+                </div>
+                <p class="text">Redécouvrez le Vrai Goût de la Cuisine avec CuisinePrestige</p>
+                <a href="javascript:void(0);" class="button voir-plus-btn">Voir plus</a>
+            </article>
+        </div>
+    </div>
+</section>
+<!-- end of services section -->
+<script>
+    // Sélection des formulaires
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+
+    // Fonction pour afficher les deux formulaires
+    function showForms() {
+        loginForm.style.display = 'block';
+        signupForm.style.display = 'block';
+    }
+
+    // Sélection de tous les boutons "Voir plus"
+    const voirPlusBtns = document.querySelectorAll('.voir-plus-btn');
+
+    // Ajouter un événement de clic à chaque bouton
+    voirPlusBtns.forEach(btn => {
+        btn.addEventListener('click', showForms);
+    });
+</script>
+
+
+
+<!-- catering section -->
+<section id = "catering" class = "py-5">
+    <div class = "slanted-bg flex">
+        <div class = "slanted-bg-circle"></div>
+        <div class = "container flex">
+            <h2>appelez à l'avance pour les commandes de restauration</h2>
+        </div>
+
+        <svg height = "50" width = "250" class = "svg">
+            <circle cx = "125" cy = "125" r = "65%" fill = "white"></circle>
+        </svg>
+    </div>
+
+    <div class = "section-title flex">
+        <div class = "icon">
+            <img src = "dishes-icon.png" alt = "" class="img1">
+        </div>
+        <h2>Restauration</h2>
+    </div>
+
+    <div class = "container">
+        <div class = "catering-grid grid">
+            <div class = "catering-item">
+                <div class = "image">
+                    <img src = "2.jpg" class="img1">
+                </div>
+                <h3>Salades fraîches</h3>
+            </div>
+            <div class = "catering-item">
+                <div class = "image">
+                    <img src = "3.jpg" class="img1">
+                </div>
+                <h3>Plateaux de fête</h3>
+            </div>
+            <div class = "catering-item">
+                <div class = "image">
+                    <img src = "4.jpg" class="img1">
+                </div>
+                <h3>Fruits de mer</h3>
+            </div>
+            <div class = "catering-item">
+                <div class = "image">
+                    <img src = "5.jpg" class="img1">
+                </div>
+                <h3>Desserts végétaliens</h3>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end of catering section -->
+
+<!-- menu section -->
+<section id = "menu" class = "py-5">
+    <div class = "slanted-bg flex">
+        <div class = "slanted-bg-circle"></div>
+        <div class = "container flex">
+            <h2>la nourriture que nous servons à nos invités</h2>
+        </div>
+
+        <svg height = "50" width = "250" class = "svg">
+            <circle cx = "125" cy = "125" r = "65%" fill = "white"></circle>
+        </svg>
+    </div>
+
+    <div class = "section-title flex">
+        <div class = "icon">
+            <img src = "menu-icon.png" alt = "" class="img1">
+        </div>
+        <h2>menu</h2>
+    </div>
+
+    <div class = "container">
+        <div class = "menu-grid grid">
+            <div class = "menu-item">
+                <div class = "image">
+                    <img src = "6.jpg" class="img1" width="100%">
+                </div>
+                <div class = "info">
+                    <h3>legume</h3>
+                    <p class = "text">Le calmar, aussi appelé encornet, est un fruit de mer savoureux et délicat, prisé dans les cuisines du monde entier pour sa chair tendre et son goût subtil. </p>
+                    
+                </div>
+            </div>
+
+            <div class = "menu-item">
+                <div class = "image">
+                    <img src = "7.jpg" class="img1" width="100%">
+                </div>
+                <div class = "info">
+                    <h3>pate</h3>
+                    <p class = "text">Les nouilles sont bien plus qu’un simple accompagnement : elles sont un pilier de la cuisine asiatique et mondiale, capables de se transformer en plats raffinés, réconfortants ou audacieusement épicés.</p>
+                   
+                </div>
+            </div>
+
+            <div class = "menu-item">
+                <div class = "image">
+                    <img src = "7.jpg" class="img1" width="100%">
+                </div>
+                <div class = "info">
+                    <h3>Boulettes</h3>
+                    <p class = "text">Simples, généreuses et infiniment personnalisables, les boulettes sont un incontournable de la cuisine du monde.</p>
+                    
+                </div>
+            </div>
+
+            <div class = "menu-item">
+                <div class = "image">
+                    <img src = "8.jpg" class="img1" width="100%">
+                </div>
+                <div class = "info">
+                    <h3>Crabe</h3>
+                    <p class = "text">Le crabe est l’/un des joyaux des produits de la mer.</p>
+                    
+                </div>
+            </div>
+
+            <div class = "menu-item">
+                <div class = "image">
+                    <img src = "8.jpg" class="img1" width="100%">
+                </div>
+                <div class = "info">
+                    <h3>Cooked Bacon</h3>
+                    <p class = "text">Le crabe est l’/un des joyaux des produits de la mer.</p>
+                    
+                </div>
+            </div>
+
+            <div class = "menu-item">
+                <div class = "image">
+                    <img src = "9.jpg" class="img1" width="100%">
+                </div>
+                <div class = "info">
+                    <h3>Atassi</h3>
+                    <p class = "text">Le crabe est l’/un des joyaux des produits de la mer.</p>
+                    
+                </div>
+            </div>
+
+            <div class = "menu-item">
+                <div class = "image">
+                    <img src = "10.jpg" class="img1" width="100%">
+                </div>
+                <div class = "info">
+                    <h3>Tévi</h3>
+                    <p class = "text">Le crabe est l’/un des joyaux des produits de la mer.</p>
+                    
+                </div>
+            </div>
+
+            <div class = "menu-item">
+                <div class = "image">
+                    <img src = "11.jpg" class="img1" width="100%">
+                </div>
+                <div class = "info">
+                    <h3>Bacon Sandwich</h3>
+                    <p class = "text">Le crabe est l’/un des joyaux des produits de la mer.</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end of menu section -->
+
+<!-- teams section -->
+<section id = "teams" class = "py-5">
+    <div class = "slanted-bg flex">
+        <div class = "slanted-bg-circle"></div>
+        <div class = "container flex">
+            <h2>excellent services & good prices</h2>
+        </div>
+
+        <svg height = "50" width = "250" class = "svg">
+            <circle cx = "125" cy = "125" r = "65%" fill = "white"></circle>
+        </svg>
+    </div>
+
+    <div class = "section-title flex">
+        <div class = "icon">
+            <img src = "team-icon.png" alt = "" class="img1">
+        </div>
+        <h2>teams</h2>
+    </div>
+
+    <div class = "container">
+        <div class = "teams-grid grid">
+            <div class = "teams-item">
+                <div class = "image">
+                    <img src = "person-1.jpg" class="img1">
+                </div>
+                <h3>Richard Brown</h3>
+                <small>Executive Chef</small>
+                <p class = "text">Visiton le site trop cool</p>
+            </div>
+
+            <div class = "teams-item">
+                <div class = "image">
+                    <img src = "person-2.jpg" class="img1">
+                </div>
+                <h3>Helen Morrison</h3>
+                <small>Restaurant Manger</small>
+                <p class = "text">Visiton le site trop cool</p>
+            </div>
+
+            <div class = "teams-item">
+                <div class = "image">
+                    <img src = "person-3.jpg" class="img1">
+                </div>
+                <h3>Samson Lopez</h3>
+                <small>Co-Chef</small>
+                <p class = "text">Visiton le site trop cool</p>
+            </div>
+
+            <div class = "teams-item">
+                <div class = "image">
+                    <img src = "person-4.jpeg" class="img1">
+                </div>
+                <h3>Fred Quinn</h3>
+                <small>Chef</small>
+                <p class = "text">Visiton le site trop cool</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end of teams section -->
+
+<!-- footer section -->
+<footer id = "contact" class = "footer">
+    <div class = "container">
+        <div class = "footer-grid grid">
+            <div class = "footer-item">
+                <div>
+                    <h3>Location</h3>
+                    <p class = "text">Cotonou, rue 69B6</p>
+                </div>
+                <div>
+                    <h3>Abonnez-vous</h3>
+                    <ul class = "flex">
+                        <li>
+                            <a href = "#"><i class = "fab fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                            <a href = "#"><i class = "fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href = "#"><i class = "fab fa-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href = "#"><i class = "fab fa-pinterest"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class = "footer-item">
+               <h3>Contact Form</h3>
+<form action="https://formspree.io/f/mzzeaaao" method="POST">
+    <div class="form-element">
+        <input type="text" class="form-control" placeholder="Enter your name" name="name" required>
+    </div>
+    <div class="form-element">
+        <input type="email" class="form-control" placeholder="Enter a valid email address" name="email" required>
+    </div>
+    <div class="form-element">
+        <textarea class="form-control" rows="10" placeholder="Enter your message" name="message" required></textarea>
+    </div>
+    <button type="submit" class="button">Submit</button>
+</form>
+
+
+    <div class = "flex py-5 copyright-text">
+        <div class = "container">
+            <small>&copy; 2025 Privacy Policy. Website Created by <b>Abdias</b></small>
+        </div>
+    </div>
+</footer>
+<!-- end of footer section -->
+</div>
+
+
+
+
+
+
+<script>
+    
+const navbarToggler = document.querySelector('.navbar-toggler');
+navbarToggler.addEventListener('click', () => {
+    navbarToggler.classList.toggle('change-icon');
+    document.querySelector('.navbar-collapse').classList.toggle('show-navbar');
+});
+</script>
+
+</body>
+</html>
