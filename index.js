@@ -7,6 +7,7 @@ const collection = require('./config'); // Assure-toi que ce fichier connecte bi
 const stripe = require('stripe')('sk_test_51R03qDJwcVMzWhcTzzPgDqrmsV1gATjXrrl1ElkstFWkLVlBwu0ege9l4XvyYM3WZQKrIm7qLxqkq4ug1urybdUZ00zkzLWwV4');
 
 const app = express(); // ✅ Manquait cette ligne
+require('dotenv').config();
 
 // Configuration des sessions
 app.use(session({
@@ -70,9 +71,8 @@ app.post('/create-checkout-session', async (req, res) => {
                 quantity: 1,
             }],
             mode: 'payment',
-            success_url: 'https://soutenance-jpxs.onrender.com/access',
-           
-            cancel_url: 'https://soutenance-jpxs.onrender.com/home?payment=cancel'
+            success_url: `${process.env.BASE_URL}/access`,
+    cancel_url: `${process.env.BASE_URL}/home?payment=cancel`
         });
 
         res.json({ id: stripeSession.id });
